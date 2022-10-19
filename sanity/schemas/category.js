@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'nname',
+      name: 'name',
       title: 'Category Name',
       type: 'string',
       validation: (Rule) => Rule.required(),
