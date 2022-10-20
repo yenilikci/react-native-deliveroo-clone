@@ -17,6 +17,7 @@
     "expo-status-bar": "~1.4.0",
     "nativewind": "^2.0.11",
     "react": "18.0.0",
+    "react-currency-formatter": "^1.1.0",
     "react-dom": "^18.2.0",
     "react-native": "0.69.6",
     "react-native-heroicons": "^3.2.0",
