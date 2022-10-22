@@ -2,11 +2,11 @@ import { View, Text, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'r
 import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { useDispatch, useSelector } from 'react-redux';
-import { selectRestaurant } from '../features/restaurantSlice';
-import { removeFromBasket, selectBasketItems, selectBasketTotal } from '../features/basketSlices';
+import { selectRestaurant } from '../../store/slices/restaurantSlice';
+import { removeFromBasket, selectBasketItems, selectBasketTotal } from '../../store/slices/basketSlices';
 import { XCircleIcon } from 'react-native-heroicons/solid';
 import Currency from "react-currency-formatter"
-import { urlFor } from '../sanity';
+import { urlFor } from '../../sanity';
 
 const BasketScreen = () => {
     const navigation = useNavigation();

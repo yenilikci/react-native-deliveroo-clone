@@ -1,16 +1,15 @@
 import {View, Text, ScrollView} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import CategoryCard from './CategoryCard';
-import sanityClient, {urlFor} from '../sanity';
+import CategoryCard from '../CategoryCard/CategoryCard';
+import sanityClient, {urlFor} from '../../sanity';
+import services from "../../services";
 
 export default function Categories() {
 
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        sanityClient.fetch(`
-           *[_type == "category"]
-        `).then(data => {
+        services.GetCategory().then(data => {
             setCategories(data);
         });
     }, []);

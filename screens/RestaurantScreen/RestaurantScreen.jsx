@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import React, { useEffect, useLayoutEffect } from 'react';
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { urlFor } from "../sanity";
+import { urlFor } from "../../sanity";
 import {
     ArrowLeftIcon,
     ChevronRightIcon,
@@ -9,10 +9,10 @@ import {
     QuestionMarkCircleIcon,
     StarIcon
 } from "react-native-heroicons/solid";
-import DishRow from "../components/DishRow";
-import BasketIcon from '../components/BasketIcon';
+import DishRow from "../../components/DishRow/DishRow";
+import BasketIcon from '../../components/BasketIcon/BasketIcon';
 import { useDispatch } from 'react-redux';
-import { setRestaurant } from '../features/restaurantSlice';
+import { setRestaurant } from '../../store/slices/restaurantSlice';
 
 export default function RestaurantScreen() {
 

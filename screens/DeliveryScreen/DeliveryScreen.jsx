@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
-import { selectRestaurant } from "../features/restaurantSlice";
+import { selectRestaurant } from "../../store/slices/restaurantSlice";
 import { XMarkIcon } from "react-native-heroicons/solid";
 import * as Progress from "react-native-progress";
 import MapView, { Marker } from "react-native-maps";

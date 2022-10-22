@@ -5,9 +5,10 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {
     ChevronDownIcon, UserIcon, AdjustmentsVerticalIcon, MagnifyingGlassIcon
 } from 'react-native-heroicons/outline';
-import Categories from '../components/Categories';
-import FeaturedRow from '../components/FeaturedRow';
-import sanityClient from "../sanity";
+import Categories from '../../components/Categories/Categories';
+import FeaturedRow from '../../components/FeaturedRow/FeaturedRow';
+import sanityClient from "../../sanity";
+import services from "../../services";
 
 export default function HomeScreen() {
 
@@ -27,15 +28,7 @@ export default function HomeScreen() {
 
 
     useEffect(() => {
-        sanityClient.fetch(`
-            *[_type == "featured"] {
-                ...,
-                restaurants[]->{
-                    ...,
-                    dishes[]->
-                }
-            }
-     `).then(data => {
+        services.GetFeaturedCategories().then(data => {
             setFeaturedCategories(data);
         });
     }, []);
@@ -93,7 +86,7 @@ export default function HomeScreen() {
                         description={category.short_description}
                     />
                 ))}
-                
+
             </ScrollView>
 
 

@@ -2,13 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './screens/HomeScreen';
-import RestaurantScreen from "./screens/RestaurantScreen";
+import HomeScreen from './screens/HomeScreen/HomeScreen';
+import RestaurantScreen from "./screens/RestaurantScreen/RestaurantScreen";
 import { Provider } from 'react-redux';
-import { store } from './store';
-import BasketScreen from './screens/BasketScreen';
-import PreparingOrderScreen from './screens/PreparingOrderScreen';
-import DeliveryScreen from './screens/DeliveryScreen';
+import { store } from './store/store';
+import BasketScreen from './screens/BasketScreen/BasketScreen';
+import PreparingOrderScreen from './screens/PreparingOrderScreen/PreparingOrderScreen';
+import DeliveryScreen from './screens/DeliveryScreen/DeliveryScreen';
 
 const Stack = createNativeStackNavigator();
 

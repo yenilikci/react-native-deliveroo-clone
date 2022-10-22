@@ -2,9 +2,9 @@ import {View, Text, TouchableOpacity, Image} from "react-native";
 import React, {useState} from "react";
 import Currency from "react-currency-formatter";
 import {MinusCircleIcon, PlusCircleIcon} from "react-native-heroicons/solid";
-import {urlFor} from "../sanity";
+import {urlFor} from "../../sanity";
 import {useDispatch, useSelector} from "react-redux";
-import {addToBasket, removeFromBasket, selectBasketItems, selectBasketItemsWithId} from "../features/basketSlices";
+import {addToBasket, removeFromBasket, selectBasketItems, selectBasketItemsWithId} from "../../store/slices/basketSlices";
 
 const DishRow = ({id, name, description, price, image}) => {
 
