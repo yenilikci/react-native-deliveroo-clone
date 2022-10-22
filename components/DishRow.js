@@ -1,12 +1,12 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import React, { useState } from "react";
-import Currency from "react-currency-formatter"
-import { MinusCircleIcon, PlusCircleIcon } from "react-native-heroicons/solid"
-import { urlFor } from "../sanity"
-import { useDispatch, useSelector } from "react-redux";
-import { addToBasket, removeFromBasket, selectBasketItems, selectBasketItemsWithId } from "../features/basketSlices";
+import {View, Text, TouchableOpacity, Image} from "react-native";
+import React, {useState} from "react";
+import Currency from "react-currency-formatter";
+import {MinusCircleIcon, PlusCircleIcon} from "react-native-heroicons/solid";
+import {urlFor} from "../sanity";
+import {useDispatch, useSelector} from "react-redux";
+import {addToBasket, removeFromBasket, selectBasketItems, selectBasketItemsWithId} from "../features/basketSlices";
 
-const DishRow = ({ id, name, description, price, image }) => {
+const DishRow = ({id, name, description, price, image}) => {
 
     const [isPressed, setIsPressed] = useState(false);
 
@@ -15,14 +15,14 @@ const DishRow = ({ id, name, description, price, image }) => {
     const dispatch = useDispatch();
 
     const addItemToBasket = () => {
-        dispatch(addToBasket({ id, name, description, price, image }))
-    }
+        dispatch(addToBasket({id, name, description, price, image}));
+    };
 
     const removeItemFromBasket = () => {
         if (!items.length > 0) return;
 
-        dispatch(removeFromBasket({ id }))
-    }
+        dispatch(removeFromBasket({id}));
+    };
 
     return (
         <>
@@ -35,7 +35,7 @@ const DishRow = ({ id, name, description, price, image }) => {
                         <Text className="text-lg mb-1">{name}</Text>
                         <Text className="text-gray-400">{description}</Text>
                         <Text className="text-gray-400 mt-2">
-                            <Currency quantity={Number(price)} currency="GBP" />
+                            <Currency quantity={Number(price)} currency="GBP"/>
                         </Text>
                     </View>
 
@@ -45,7 +45,7 @@ const DishRow = ({ id, name, description, price, image }) => {
                                 borderWidth: 1,
                                 borderColor: '#F3F3F4'
                             }}
-                            source={{ uri: urlFor(image).url() }}
+                            source={{uri: urlFor(image).url()}}
                             className="h-20 w-20 bg-gray-300 p-4"
                         />
                     </View>
